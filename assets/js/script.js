@@ -7,7 +7,7 @@ const getImages = document.querySelector('#imageBtn');
 
 const getLaunchesApi = function (user) {
   // format the github api url
-  const apiUrlLaunches = 'https://lldev.thespacedevs.com/2.2.0/';
+  const apiUrlLaunches = 'https://lldev.thespacedevs.com/2.2.0/launch';
 
   // make a request to the url
   fetch(apiUrlLaunches)
@@ -18,12 +18,12 @@ const getLaunchesApi = function (user) {
           console.log(data);
         });
       } else {
-        alert('Error: GitHub User Not Found');
+        alert('Error: Api issue');
       }
     })
     .catch(function (error) {
       // .catch gets chained onto the end of the `.then()` method.
-      alert('Unable to connect to GitHub');
+      alert('Unable to connect to TheSpaceDevs');
     });
 };
 
@@ -41,12 +41,12 @@ const getImagesApi = function (user) {
           console.log(data);
         });
       } else {
-        alert('Error: GitHub User Not Found');
+        alert('Error: Api issue');
       }
     })
     .catch(function (error) {
       // .catch gets chained onto the end of the `.then()` method.
-      alert('Unable to connect to GitHub');
+      alert('Unable to connect to NASA apod');
     });
 };
 
