@@ -15,7 +15,7 @@ const getLaunchesApi = function (user) {
       // request was succesful
       if (response.ok) {
         response.json().then(function (data) {
-          console.log(data);
+          displayLaunches(data);
         });
       } else {
         alert('Error: Api issue');
@@ -38,7 +38,7 @@ const getImagesApi = function (user) {
       // request was succesful
       if (response.ok) {
         response.json().then(function (data) {
-          console.log(data);
+          displayImages(data);
         });
       } else {
         alert('Error: Api issue');
@@ -50,9 +50,16 @@ const getImagesApi = function (user) {
     });
 };
 
-//     'https://api.nasa.gov/planetary/apod?api_key=nndUMOcl1g9pH4trtcU5C4Reha8gBSZ4cOfJrlWU'
+const displayLaunches = function (data) {
+  console.log(data);
+  document.getElementById('launchBtn').style.display = 'none';
+  console.log('displayLaunches Worked');
+};
 
-// Api for NASA APOD https://api.nasa.gov/planetary/apod?api_key=nndUMOcl1g9pH4trtcU5C4Reha8gBSZ4cOfJrlWU
+const displayImages = function (data) {
+  console.log(data);
+  console.log('displayImages Worked');
+};
 
 getLaunches.addEventListener('click', getLaunchesApi);
 
