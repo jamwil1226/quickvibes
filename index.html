@@ -27,13 +27,13 @@
     <div class="columns">
       <div class="column">
         <figure class="image is-5by3">
-          <img src="./assets/images/space-launch.jpg" />
+          <img src="./assets/images/space-launch.jpg" alt="space shuttle launching"/>
         </figure>
       </div>
 
       <div class="column">
         <figure class="image is-5by3">
-          <img src="./assets/images/astronomy-image.jpg" />
+          <img src="./assets/images/astronomy-image.jpg" alt="astronomy image"/>
         </figure>
       </div>
     </div>
@@ -46,9 +46,22 @@
             <p class="para has-text-centered">
               Explore historical launches here!
             </p>
-            <button id="launchBtn" class="button is-link is-medium is-rounded">
-              View Launches
-            </button>
+            <div class="select is-rounded is-link launchBtn">
+              <select>
+                <option>View Launches</option>
+                <option>Launch Name 1</option>
+                <option>Launch Name 2</option>
+                <option>Launch Name 3</option>
+                <option>Launch Name 4</option>
+                <option>Launch Name 5</option>
+                <option>Launch Name 6</option>
+                <option>Launch Name 7</option>
+                <option>Launch Name 8</option>
+                <option>Launch Name 9</option>
+                <option>Launch Name 10</option>
+              </select>
+            </div>
+            
 
             <!-- Add a dropdown that can be clicked or typed -->
           </div>
@@ -57,7 +70,7 @@
 
       <div class="column">
         <div class="card has-text-centered">
-          <div class="card-content">
+          <div class="card-content has-text-centered">
             <h2 class="title has-text-centered">ASTRONOMY IMAGE OF THE DAY</h2>
             <p class="para has-text-centered">
               Nasa's APOD Image of the day!
@@ -74,21 +87,21 @@
       <div class="column">
         <div class="card has-text-centered">
           <div class="card-content">
-            <h2 class="title has-text-centered">Your Viewed Launches</h2>
-            <p class="para has-text-centered"></p>
+            <h2 class="title has-text-centered">SEARCH FOR YOUR FAVORITE ASTRONAUT</h2>
+            <input class="input" type="text" placeholder="Enter Astronaut Name">
           </div>
         </div>
       </div>
 
       <div class="column">
         <div class="card has-text-centered">
-          <div class="card-content">
-            <h2 class="title has-text-centered">Your Saved Images</h2>
-            <p class="para has-text-centered"></p>
+          <div class="card-content has-text-centered">
+            <h2 class="title has-text-centered">YOUR SAVED IMAGES</h2>
           </div>
         </div>
       </div>
     </div>
+
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
