@@ -52,7 +52,7 @@ const getImagesApi = function (user) {
 
 const displayLaunches = function (data) {
   console.log(data);
-  document.getElementById('launchBtn').style.display = 'none';
+  //document.getElementById('launchBtn').style.display = 'none';
   console.log('displayLaunches Worked');
 };
 
