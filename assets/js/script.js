@@ -54,13 +54,52 @@ const displayLaunches = function (data) {
   console.log(data);
   document.getElementById('launchBtn').style.display = 'none';
   console.log('displayLaunches Worked');
+  $("#dropdown-main").attr("style","display:block");
+  var ddtrig=$("<div>").addClass("dropdown-trigger");
+  var ddBtn=$("<button>").addClass("button").attr("aria-haspopup","true").attr("aria-controls","dropdown-menu");
+  var span1=$("<span>").text("dropdownbtn")
+  var span2=$("<span>").addClass("icon is-small");
+  var icon=$("<i>").addClass('fas fa-angle-down').attr("aria-hidden","true");
+  var ddmenu=$("<div>").addClass("dropdown-menu").attr("id","dropdown-menu").attr("role","menu")
+  var ddcontent=$("<div>").addClass("dropdown-content")
+  for(var i=0;i<data.results.length;i++){
+    console.log(data.results[i]);
+    var a=$("<a>").addClass("dropdown-item").text(data.results[i].name);
+    ddcontent.append(a)
+  }
+  $("#dropdown-main").append(ddtrig.append(ddBtn.append(span1,span2.append(icon))),ddmenu.append(ddcontent))
+
+
 };
 
+
+
+// <div class="dropdown-menu" id="dropdown-menu" role="menu">
+//   <div class="dropdown-content">
+//     <a href="#" class="dropdown-item">
+//       Dropdown item
+//     </a>
+//     <a class="dropdown-item">
+//       Other dropdown item
+//     </a>
+//     <a href="#" class="dropdown-item is-active">
+//       Active dropdown item
+//     </a>
+//     <a href="#" class="dropdown-item">
+//       Other dropdown item
+//     </a>
+//     <hr class="dropdown-divider">
+//     <a href="#" class="dropdown-item">
+//       With a divider
+//     </a>
+//   </div>
+// </div> */
+
 const displayImages = function (data) {
-  console.log(data);
-  console.log('displayImages Worked');
+  // console.log(data);
+  // console.log('displayImages Worked');
 };
 
 getLaunches.addEventListener('click', getLaunchesApi);
-
 getImages.addEventListener('click', getImagesApi);
+
