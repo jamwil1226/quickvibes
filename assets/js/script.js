@@ -49,6 +49,26 @@ const getImagesApi = function (user) {
       alert('Unable to connect to NASA apod');
     });
 };
+// call
+const getAstronautApi = function (user) {
+  const apiUrlAstronaut = 'https://lldev.thespacedevs.com/2.2.0/astronaut';
+
+  fetch(apiUrlAstronaut)
+    .then(function (response) {
+      // request was successful
+      if (response.ok) {
+        response.json().then(function (data) {
+          displayAstronaut(data);
+        });
+      } else {
+        alert('No Astronauts found');
+      }
+    })
+    .catch(function (error) {
+      // .catch gets chained onto the end of the `.then()` method.
+      alert('Unable to connect to TheSpaceDevs');
+    });
+};
 
 const displayLaunches = function (data) {
   console.log(data);
@@ -56,10 +76,17 @@ const displayLaunches = function (data) {
   console.log('displayLaunches Worked');
 };
 
+const displayAstronaut = function (data) {
+  console.log(data);
+};
+
 const displayImages = function (data) {
   console.log(data);
   console.log('displayImages Worked');
 };
+
+// call getAstronautApi temporarly until a from element is made
+getAstronautApi();
 
 getLaunches.addEventListener('click', getLaunchesApi);
 
