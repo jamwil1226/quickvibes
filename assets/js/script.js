@@ -49,10 +49,30 @@ const getImagesApi = function (user) {
       alert('Unable to connect to NASA apod');
     });
 };
+// call
+const getAstronautApi = function (user) {
+  const apiUrlAstronaut = 'https://lldev.thespacedevs.com/2.2.0/astronaut';
+
+  fetch(apiUrlAstronaut)
+    .then(function (response) {
+      // request was successful
+      if (response.ok) {
+        response.json().then(function (data) {
+          displayAstronaut(data);
+        });
+      } else {
+        alert('No Astronauts found');
+      }
+    })
+    .catch(function (error) {
+      // .catch gets chained onto the end of the `.then()` method.
+      alert('Unable to connect to TheSpaceDevs');
+    });
+};
 
 const displayLaunches = function (data) {
   console.log(data);
-  document.getElementById('launchBtn').style.display = 'none';
+  //document.getElementById('launchBtn').style.display = 'none';
   console.log('displayLaunches Worked');
   $("#dropdown-main").attr("style","display:block");
   var ddtrig=$("<div>").addClass("dropdown-trigger");
@@ -72,33 +92,17 @@ const displayLaunches = function (data) {
 
 };
 
-
-
-// <div class="dropdown-menu" id="dropdown-menu" role="menu">
-//   <div class="dropdown-content">
-//     <a href="#" class="dropdown-item">
-//       Dropdown item
-//     </a>
-//     <a class="dropdown-item">
-//       Other dropdown item
-//     </a>
-//     <a href="#" class="dropdown-item is-active">
-//       Active dropdown item
-//     </a>
-//     <a href="#" class="dropdown-item">
-//       Other dropdown item
-//     </a>
-//     <hr class="dropdown-divider">
-//     <a href="#" class="dropdown-item">
-//       With a divider
-//     </a>
-//   </div>
-// </div> */
+const displayAstronaut = function (data) {
+  console.log(data);
+};
 
 const displayImages = function (data) {
   // console.log(data);
   // console.log('displayImages Worked');
 };
+
+// call getAstronautApi temporarly until a from element is made
+getAstronautApi();
 
 getLaunches.addEventListener('click', getLaunchesApi);
 getImages.addEventListener('click', getImagesApi);

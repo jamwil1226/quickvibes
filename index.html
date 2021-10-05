@@ -19,6 +19,19 @@
       <h2 class="subtitle">
         Helping you learn more about space!
       </h2>
+    <!-- Columns -->
+    <div class="columns">
+      <div class="column">
+        <figure class="image is-5by3">
+          <img src="./assets/images/space-launch.jpg" alt="space shuttle launching"/>
+        </figure>
+      </div>
+
+      <div class="column">
+        <figure class="image is-5by3">
+          <img src="./assets/images/astronomy-image.jpg" alt="astronomy image"/>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -50,31 +63,63 @@
           </button>
           <div style="display:none" class="dropdown is-active" id="dropdown-main"></div>
           <!-- Add a dropdown that can be clicked or typed -->
+    <div class="columns">
+      <div class="column">
+        <div class="card has-text-centered">
+          <div class="card-content">
+            <h2 class="title has-text-centered">HISTORICAL LAUNCHES</h2>
+            <p class="para has-text-centered">
+              Explore historical launches here!
+            </p>
+            <div id="launchBtn" class="select is-rounded is-link">
+              <select>
+                <option>View Launches</option>
+                <option>Sputnik 8K74PS | Sputnik 1</option>
+                <option>Sputnik 8K74PS | Sputnik 2</option>
+                <option>Vanguard | Vanguard</option>
+                <option>Juno I | Explorer 1</option>
+                <option>Vanguard | Vanguard 2</option>
+                <option>Juno I | Explorer 2</option>
+                <option>Vanguard | Vanguard 3</option>
+                <option>Juno I | Explorer 3</option>
+                <option>Sputnit 8A91 | D-1-1</option>
+                <option>Vanguard | Vanguard 4</option>
+              </select>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="column">
-      <div class="card has-text-centered">
-        <div class="card-content">
-          <h2 class="title has-text-centered">ASTRONOMY IMAGE OF THE DAY</h2>
-          <p class="para has-text-centered">
-            Nasa's APOD Image of the day!
-          </p>
-          <button id="imageBtn" class="button is-link is-medium is-rounded">
-            View Image
-          </button>
+      <div class="column">
+        <div class="card has-text-centered">
+          <div class="card-content has-text-centered">
+            <h2 class="title has-text-centered">ASTRONOMY IMAGE OF THE DAY</h2>
+            <p class="para has-text-centered">
+              NASA's APOD Image of the day!
+            </p>
+            <button id="imageBtn" class="button is-link is-medium is-rounded">
+              View Image
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="columns">
-    <div class="column">
-      <div class="card has-text-centered">
-        <div class="card-content">
-          <h2 class="title has-text-centered">Your Viewed Launches</h2>
-          <p class="para has-text-centered"></p>
+    <div class="columns"> 
+      <div class="column">    
+        <div class="card">
+          <div class="card has-text-centered">
+            <h2 class="title has-text-centered">SEARCH FOR YOUR FAVORITE ASTRONAUT</h2>
+            <input id="astronaut" class="input" type="text" placeholder="Enter Astronaut Name">
+            <button id="AstronautBtn" class="button is-link is-medium is-rounded">
+              Search
+            </button>
+            <figure class="image is-1by1">
+              <img src="./assets/images/astronaut-resized.png">
+            </figure>
+          </div>
         </div>
       </div>
     </div>
