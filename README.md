@@ -5,9 +5,9 @@
 ## This project is created by utilizing HTML, CSS, Bulma and JavaScript with the addition of the Space Devs API and NASA's Astronomy Image of the Day API!
 
 ## CALLING ALL SPACE LOVERS! 
-### AS A person who loves space,  
-### I WANT to learn more about historical launches, my favorite astronaut, and view NASA’s astronomy image of the day,  
-### SO THAT I have a greater appreciation for what NASA has accomplished and what it is still working so hard to provide.
+> ### AS A person who loves space,  
+> ### I WANT to learn more about historical launches, my favorite astronaut, and view NASA’s astronomy image of the day,  
+> ### SO THAT I have a greater appreciation for what NASA has accomplished and what it is still working so hard to provide.
 
  ## Once the Space Explorer opens, you will be greeted with two images. One image is a space shuttle launch and the other image is an astronmy image.
  ![Homepage Images](./assets/images/homepage-images.png)
