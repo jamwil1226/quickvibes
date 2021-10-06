@@ -38,7 +38,7 @@
 ![Responsive homepage-1](./assets/images/homepage-1.png)
 ![Responsive homepage-2](./assets/images/homepage-2.png)
 
-## Click here to view Space Explorer now: https://jamwil1226.github.io/quickvibes/
+## Click here to view Space Explorer now: https://jamwil1226.github.io/space-explorer/
 
 ## We hope you enjoy becoming a Space Explorer! We welcome all contributions and feedback!
 
