@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>QuickVibes</title>
+    <title>Space Explorer</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
@@ -40,111 +40,85 @@
       </div>
     </div>
 
+    <!-- Add a dropdown -->
     <div class="columns">
       <div class="column">
         <div class="card has-text-centered">
           <div class="card-content">
+            <h2 class="title has-text-centered">HISTORICAL LAUNCHES</h2>
+            <p class="para has-text-centered">
+              Explore historical launches here!
+            </p>
             <div
               style="display: none;"
               class="dropdown is-active"
               id="dropdown-main"
             ></div>
-            <!-- Add a dropdown that can be clicked or typed -->
-            <div class="columns">
-              <div class="column">
-                <div class="card has-text-centered">
-                  <div class="card-content">
-                    <h2 class="title has-text-centered">HISTORICAL LAUNCHES</h2>
-                    <p class="para has-text-centered">
-                      Explore historical launches here!
-                    </p>
+            <!--ADD ON CLICK FUNCTION TO OPTIONS DROP DOWN MENU-->
+            <button
+              id="launchBtn"
+              class="button is-rounded is-link"
+              onclick="getLaunchesApi()"
+            >
+              View Launches
+            </button>
+          </div>
 
-                    <!--ADD ON CLICK FUNCTION TO OPTIONS DROP DOWN MENU-->
-                    <div
-                      id="launchBtn"
-                      class="select is-rounded is-link"
-                      onclick="getLaunchesApi()"
-                    >
-                      <select>
-                        <!--Add values to options display to display launches-->
-                        <option>View Launches</option>
-                        <option value="sputnik1"
-                          >Sputnik 8K74PS | Sputnik 1</option
-                        >
-                        <option value="sputnik2"
-                          >Sputnik 8K74PS | Sputnik 2</option
-                        >
-                        <option value="vanguard1">Vanguard | Vanguard</option>
-                        <option value="explorer1">Juno I | Explorer 1</option>
-                        <option value="vanguard2">Vanguard | Vanguard 2</option>
-                        <option value="exlporer2">Juno I | Explorer 2</option>
-                        <option value="vanguard3">Vanguard | Vanguard 3</option>
-                        <option value="explorer3">Juno I | Explorer 3</option>
-                        <option value="d11">Sputnik 8A91 | D-1-1</option>
-                        <option value="vanguard4">Vanguard | Vanguard 4</option>
-                      </select>
-                    </div>
+          <div class="column">
+            <div class="card has-text-centered">
+              <div class="card-content has-text-centered">
+                <h2 class="title has-text-centered">
+                  ASTRONOMY IMAGE OF THE DAY
+                </h2>
+
+                <!--MODAL TO DISPLAY IMAGE OF THE DAY-->
+                <div class="modal" id="myModal">
+                  <div class="modal-background"></div>
+                  <div class="modal-card">
+                    <header class="modal-card-head">
+                      <p class="modal-card-title">
+                        NASA's APOD Image of the day!
+                      </p>
+                      <button
+                        class="delete"
+                        aria-label="close"
+                        data-bulma-modal="close"
+                      ></button>
+                    </header>
+                    <section class="modal-card-body">
+                      <h2 id="title"></h2>
+                      <h3>Date: <span id="date"></span></h3>
+                      <img
+                        id="pic"
+                        src=""
+                        alt="NASA Picture Of The Day"
+                        width="100%"
+                      />
+                      <p id="explanation"></p>
+                    </section>
+                    <footer class="modal-card-foot">
+                      <button
+                        id="save"
+                        class="button is-success"
+                        data-bulma-modal="close"
+                        onclick="imageOfTheDay()"
+                      >
+                        Save
+                      </button>
+                      <button class="button" data-bulma-modal="close">
+                        Cancel
+                      </button>
+                    </footer>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="column">
-              <div class="card has-text-centered">
-                <div class="card-content has-text-centered">
-                  <h2 class="title has-text-centered">
-                    ASTRONOMY IMAGE OF THE DAY
-                  </h2>
-
-                  <!--MODAL TO DISPLAY IMAGE OF THE DAY-->
-                  <div class="modal" id="myModal">
-                    <div class="modal-background"></div>
-                    <div class="modal-card">
-                      <header class="modal-card-head">
-                        <p class="modal-card-title">
-                          NASA's APOD Image of the day!
-                        </p>
-                        <button
-                          class="delete"
-                          aria-label="close"
-                          data-bulma-modal="close"
-                        ></button>
-                      </header>
-                      <section class="modal-card-body">
-                        <h2 id="title"></h2>
-                        <h3>Date: <span id="date"></span></h3>
-                        <img
-                          id="pic"
-                          src=""
-                          alt="NASA Picture Of The Day"
-                          width="100%"
-                        />
-                        <p id="explanation"></p>
-                      </section>
-                      <footer class="modal-card-foot">
-                        <button
-                          id="save"
-                          class="button is-success"
-                          data-bulma-modal="close"
-                          onclick="imageOfTheDay()"
-                        >
-                          Save
-                        </button>
-                        <button class="button" data-bulma-modal="close">
-                          Cancel
-                        </button>
-                      </footer>
-                    </div>
-                  </div>
-
-                  <button
-                    id="btn"
-                    class="button is-link is-rounded"
-                    onclick="displayImage()"
-                  >
-                    Click Here!
-                  </button>
-                </div>
+                <button
+                  id="btn"
+                  class="button is-link is-rounded"
+                  onclick="displayImage()"
+                >
+                  Click Here!
+                </button>
               </div>
             </div>
           </div>
