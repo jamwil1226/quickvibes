@@ -207,7 +207,7 @@ astronautMdl.addEventListener('modal:close', function () {
 const getLaunches = document.querySelector('#launchBtn');
 const getAstronaut = document.querySelector('#astronautBtn')
 
-//DISPLAY DIFFERENT LAUNCHES
+// FETCH LAUNCHES API
 const getLaunchesApi = function (user) {
   // format the github api url
   const apiUrlLaunches = 'https://lldev.thespacedevs.com/2.2.0/launch';
@@ -230,7 +230,7 @@ const getLaunchesApi = function (user) {
     });
 };
 
-//DAILY IMAGES DISPLAY
+// FETCH IMAGES API
 // format the github api url
 const displayImage = function () {
   const apiUrlImages =
@@ -254,15 +254,7 @@ const displayImage = function () {
     });
 };
 
-// function for passing in data from displayImage fetch
-const getImageData = function (data) {
-  console.log(data);
-  document.getElementById('title').textContent = data.title;
-  document.getElementById('date').textContent = data.date;
-  document.getElementById('pic').src = data.hdurl;
-  document.getElementById('explanation').textContent = data.explanation;
-};
-
+// FETCH ASTRONAUTS API
 const getAstronautApi = function (user) {
   const apiUrlAstronaut = 'https://lldev.thespacedevs.com/2.2.0/astronaut';
     
@@ -283,7 +275,36 @@ const getAstronautApi = function (user) {
     });
 };
 
-const displayLaunches = function (data) {
+// function for passing in data from getLaunchesApi fetch
+const getLaunchData = function (data) {
+  console.log(data);
+  document.getElementById('name').textContent = data.name;
+  document.getElementById('status').textContent = data.status;
+  document.getElementById('launch-pic').src = data.url;
+  document.getElementById('description').textContent = data.description;
+};
+
+
+// function for passing in data from displayImage fetch
+const getImageData = function (data) {
+  console.log(data);
+  document.getElementById('title').textContent = data.title;
+  document.getElementById('date').textContent = data.date;
+  document.getElementById('pic').src = data.hdurl;
+  document.getElementById('explanation').textContent = data.explanation;
+};
+
+// function for passing in data from getAstronautsApi fetch
+const getAstronautData = function (data) {
+  console.log(data);
+  document.getElementById('name').textContent = data.name;
+  document.getElementById('bio').textContent = data.bio;
+  document.getElementById('astraonaut-pic').src = data.url;
+  document.getElementById('date_of_birth').textContent = data.date_of_birth;
+};
+
+// LIST OF LAUNCHES WHEN CLICKING BUTTON 
+var displayLaunches = function (data) {
   console.log(data);
   $('#dropdown-main').attr('style', 'display:block');
   //var ddtrig = $('<div>').addClass('dropdown-trigger'); // container for a button
@@ -308,9 +329,9 @@ const displayLaunches = function (data) {
     //ddtrig.append(ddBtn.append),
     ddmenu.append(ddcontent)
   );
-
 };
 
+// LIST OF ASTRONAUTS WHEN CLICKING BUTTON 
 const displayAstronaut = function (data) {
   console.log(data);
   $('#dropdown-main').attr('style', 'display:block');
