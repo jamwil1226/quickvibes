@@ -6,7 +6,7 @@
 
 ## CALLING ALL SPACE LOVERS! 
 > ### AS A person who loves space,  
-> ### I WANT to learn more about historical launches, my favorite astronaut, and view NASA’s astronomy image of the day,  
+> ### I WANT to learn more about historical launches, famous astronauts, and view NASA’s astronomy image of the day,  
 > ### SO THAT I have a greater appreciation for what NASA has accomplished and what it is still working so hard to provide.
 
  ## Once the Space Explorer opens, you will be greeted with two images. One image is a space shuttle launch and the other image is an astronmy image.
@@ -22,14 +22,14 @@
  ## We know these images are something you most likely want to save, so we provided an area for you to save the images here.
 ![Saved Images](./assets/images/saved-images.png)
 
- ## Want to learn more about your favorite astronaut? You can also do that here.
+ ## Want to learn more about a famous astronaut? You can also do that here.
  ![Favorite Astronaut](./assets/images/favorite-astronaut.png)
 
  ## This site is fully responsive for all screen sizes.
  ![Responsive homepage-1](./assets/images/homepage-1.png)
  ![Responsive homepage-2](./assets/images/homepage-2.png)
 
-## Click here to view Space Explorer now: https://jamwil1226.github.io/quickvibes/
+## Click here to view Space Explorer now: https://jamwil1226.github.io/space-explorer/
 
 ## We hope you enjoy becoming a Space Explorer! We welcome all contributions and feedback!
 
