@@ -51,13 +51,13 @@
               class="dropdown is-active"
               id="dropdown-main">
             </div>
-            <!--ADD ON CLICK FUNCTION TO OPTIONS DROP DOWN MENU-->
+            <!--ON CLICK FUNCTION TO OPTIONS DROP DOWN MENU-->
             <button
               id="launchBtn"
               class="button is-rounded is-medium is-link"
               onclick="getLaunchesApi()">
               View Launches
-            </button>
+            </button>            
           </div>
         </div>
       </div>
@@ -74,9 +74,36 @@
               onclick="displayImage()">
               View Image
             </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+            <!--MODAL TO DISPLAY LAUNCH-->
+            <div class="modal" id="launchModal">
+              <div class="modal-background"></div>
+                <div class="modal-card">
+                  <header class="modal-card-head">
+                    <section class="modal-card-title">
+                    </section>
+                    <button
+                      class="delete"
+                      aria-label="close"
+                      data-bulma-modal="close">
+                    </button>
+                  </header>
+                  <section class="modal-card-body">
+                    <!-- all launches go here -->
+                  </section>
+                  <footer class="modal-card-foot">
+                  </footer>
+                </div>
+              </div>
+            </div>
 
             <!--MODAL TO DISPLAY IMAGE OF THE DAY-->
-            <div class="modal" id="myModal">
+            <div class="modal" id="imageModal">
               <div class="modal-background"></div>
                 <div class="modal-card">
                   <header class="modal-card-head">
@@ -114,11 +141,30 @@
                   </footer>
                 </div>
               </div>
+            </div>        
+
+            <!--MODAL TO DISPLAY ASTRONAUT -->
+            <div class="modal" id="astronautModal">
+              <div class="modal-background"></div>
+                <div class="modal-card">
+                  <header class="modal-card-head">
+                    <section class="modal-card-title">
+                    </section>
+                    <button
+                      class="delete"
+                      aria-label="close"
+                      data-bulma-modal="close">
+                    </button>
+                  </header>
+                  <section class="modal-card-body">
+                   <!-- All astronauts go here -->
+                  </section>
+                  <footer class="modal-card-foot">
+                  </footer>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
 
     <div class="columns">
       <div class="column">
@@ -128,9 +174,11 @@
               SEARCH FAMOUS ASTRONAUTS
             </h2>
             <button
-              id="AstronautBtn"
-              class="button is-link is-medium is-rounded">
-                Search Astronauts
+              id="astronautBtn"
+              class="button is-link is-medium is-rounded"
+              Search Astronauts
+              onclick="getAstronautApi()">
+              View Astronauts
             </button>
             <p>
             <img src="./assets/images/astronaut-resized.png" />
