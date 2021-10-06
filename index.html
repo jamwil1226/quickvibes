@@ -1,179 +1,201 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>QuickVibes</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>QuickVibes</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
-</head>
+  <body>
+    <!-- Hero Section -->
+    <section class="hero is-link">
+      <div class="container">
+        <h1 class="title is-1">
+          SPACE EXPLORER
+        </h1>
+        <h2 class="subtitle">
+          Helping you learn more about space!
+        </h2>
+        <!-- Columns -->
+      </div>
+    </section>
 
-<body>
-  <!-- Hero Section -->
-  <section class="hero is-link">
-    <div class="container">
-      <h1 class="title is-1">
-        SPACE EXPLORER
-      </h1>
-      <h2 class="subtitle">
-        Helping you learn more about space!
-      </h2>
     <!-- Columns -->
     <div class="columns">
       <div class="column">
         <figure class="image is-5by3">
-          <img src="./assets/images/space-launch.jpg" alt="space shuttle launching"/>
+          <img src="./assets/images/space-launch.jpg" />
         </figure>
       </div>
 
       <div class="column">
         <figure class="image is-5by3">
-          <img src="./assets/images/astronomy-image.jpg" alt="astronomy image"/>
+          <img src="./assets/images/astronomy-image.jpg" />
         </figure>
       </div>
     </div>
-  </section>
 
-  <!-- Columns -->
-  <div class="columns">
-    <div class="column">
-      <figure class="image is-5by3">
-        <img src="./assets/images/space-launch.jpg" />
-      </figure>
-    </div>
-
-    <div class="column">
-      <figure class="image is-5by3">
-        <img src="./assets/images/astronomy-image.jpg" />
-      </figure>
-    </div>
-  </div>
-
-  <div class="columns">
-    <div class="column">
-      <div class="card has-text-centered">
-        <div class="card-content">
-          <h2 class="title has-text-centered">HISTORICAL LAUNCHES</h2>
-          <p class="para has-text-centered">
-            Explore historical launches here!
-          </p>
-          <button id="launchBtn" class="button is-link is-medium is-rounded">
-            View Launches
-          </button>
-          <div style="display:none" class="dropdown is-active" id="dropdown-main"></div>
-          <!-- Add a dropdown that can be clicked or typed -->
     <div class="columns">
       <div class="column">
         <div class="card has-text-centered">
           <div class="card-content">
-            <h2 class="title has-text-centered">HISTORICAL LAUNCHES</h2>
-            <p class="para has-text-centered">
-              Explore historical launches here!
-            </p>
+            <div
+              style="display: none;"
+              class="dropdown is-active"
+              id="dropdown-main"
+            ></div>
+            <!-- Add a dropdown that can be clicked or typed -->
+            <div class="columns">
+              <div class="column">
+                <div class="card has-text-centered">
+                  <div class="card-content">
+                    <h2 class="title has-text-centered">HISTORICAL LAUNCHES</h2>
+                    <p class="para has-text-centered">
+                      Explore historical launches here!
+                    </p>
 
-            <!--ADD ON CLICK FUNCTION TO OPTIONS DROP DOWN MENU-->
-            <div id="launchBtn" class="select is-rounded is-link" onclick="getLaunchesApi()">
-              <select>
-                <!--Add values to options display to display launches-->
-                <option>View Launches</option>
-                <option value="sputnik1">Sputnik 8K74PS | Sputnik 1</option>
-                <option value="sputnik2">Sputnik 8K74PS | Sputnik 2</option>
-                <option value="vanguard1">Vanguard | Vanguard</option>
-                <option value="explorer1">Juno I | Explorer 1</option>
-                <option value="vanguard2">Vanguard | Vanguard 2</option>
-                <option value="exlporer2">Juno I | Explorer 2</option>
-                <option value="vanguard3">Vanguard | Vanguard 3</option>
-                <option value="explorer3">Juno I | Explorer 3</option>
-                <option value="d11">Sputnik 8A91 | D-1-1</option>
-                <option value="vanguard4">Vanguard | Vanguard 4</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-      <div class="column">
-        <div class="card has-text-centered">
-          <div class="card-content has-text-centered">
-            <h2 class="title has-text-centered">ASTRONOMY IMAGE OF THE DAY</h2>
-          
-           
-            <!--MODAL TO DISPLAY IMAGE OF THE DAY-->
-            <div class="modal" id="myModal">
-              <div class="modal-background"></div>
-              <div class="modal-card">
-                <header class="modal-card-head">
-                  <p class="modal-card-title">NASA's APOD Image of the day!</p>
-                  <button class="delete" aria-label="close" data-bulma-modal="close"></button>
-                </header>
-                <section class="modal-card-body">
-                  <h2 id="title"></h2>
-                    <h3>Date: <span id="date"></span></h3>
-                    <img id="pic" src="" alt="NASA Picture Of The Day" width="100%">
-                    <p id="explanation"></p>
-                </section>
-                <footer class="modal-card-foot">
-                  <button id="save" class="button is-success" data-bulma-modal="close" onclick="imageOfTheDay()">Save</button>
-                  <button class="button" data-bulma-modal="close">Cancel</button>
-                  
-                </footer>
+                    <!--ADD ON CLICK FUNCTION TO OPTIONS DROP DOWN MENU-->
+                    <div
+                      id="launchBtn"
+                      class="select is-rounded is-link"
+                      onclick="getLaunchesApi()"
+                    >
+                      <select>
+                        <!--Add values to options display to display launches-->
+                        <option>View Launches</option>
+                        <option value="sputnik1"
+                          >Sputnik 8K74PS | Sputnik 1</option
+                        >
+                        <option value="sputnik2"
+                          >Sputnik 8K74PS | Sputnik 2</option
+                        >
+                        <option value="vanguard1">Vanguard | Vanguard</option>
+                        <option value="explorer1">Juno I | Explorer 1</option>
+                        <option value="vanguard2">Vanguard | Vanguard 2</option>
+                        <option value="exlporer2">Juno I | Explorer 2</option>
+                        <option value="vanguard3">Vanguard | Vanguard 3</option>
+                        <option value="explorer3">Juno I | Explorer 3</option>
+                        <option value="d11">Sputnik 8A91 | D-1-1</option>
+                        <option value="vanguard4">Vanguard | Vanguard 4</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            
-            <button id="btn" class="button is-link is-rounded" onclick="getImagesApi()"  >Click Here!</button>
 
+            <div class="column">
+              <div class="card has-text-centered">
+                <div class="card-content has-text-centered">
+                  <h2 class="title has-text-centered">
+                    ASTRONOMY IMAGE OF THE DAY
+                  </h2>
 
+                  <!--MODAL TO DISPLAY IMAGE OF THE DAY-->
+                  <div class="modal" id="myModal">
+                    <div class="modal-background"></div>
+                    <div class="modal-card">
+                      <header class="modal-card-head">
+                        <p class="modal-card-title">
+                          NASA's APOD Image of the day!
+                        </p>
+                        <button
+                          class="delete"
+                          aria-label="close"
+                          data-bulma-modal="close"
+                        ></button>
+                      </header>
+                      <section class="modal-card-body">
+                        <h2 id="title"></h2>
+                        <h3>Date: <span id="date"></span></h3>
+                        <img
+                          id="pic"
+                          src=""
+                          alt="NASA Picture Of The Day"
+                          width="100%"
+                        />
+                        <p id="explanation"></p>
+                      </section>
+                      <footer class="modal-card-foot">
+                        <button
+                          id="save"
+                          class="button is-success"
+                          data-bulma-modal="close"
+                          onclick="imageOfTheDay()"
+                        >
+                          Save
+                        </button>
+                        <button class="button" data-bulma-modal="close">
+                          Cancel
+                        </button>
+                      </footer>
+                    </div>
+                  </div>
 
-
-
-
+                  <button
+                    id="btn"
+                    class="button is-link is-rounded"
+                    onclick="displayImage()"
+                  >
+                    Click Here!
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-    <div class="columns"> 
-      <div class="column">    
-        <div class="card">
+        <div class="columns">
+          <div class="column">
+            <div class="card">
+              <div class="card has-text-centered">
+                <h2 class="title has-text-centered">
+                  SEARCH FOR YOUR FAVORITE ASTRONAUT
+                </h2>
+                <input
+                  id="astronaut"
+                  class="input"
+                  type="text"
+                  placeholder="Enter Astronaut Name"
+                />
+                <button
+                  id="AstronautBtn"
+                  class="button is-link is-medium is-rounded"
+                >
+                  Search
+                </button>
+                <figure class="image is-1by1">
+                  <img src="./assets/images/astronaut-resized.png" />
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
           <div class="card has-text-centered">
-            <h2 class="title has-text-centered">SEARCH FOR YOUR FAVORITE ASTRONAUT</h2>
-            <input id="astronaut" class="input" type="text" placeholder="Enter Astronaut Name">
-            <button id="AstronautBtn" class="button is-link is-medium is-rounded">
-              Search
-            </button>
-            <figure class="image is-1by1">
-              <img src="./assets/images/astronaut-resized.png">
-            </figure>
+            <div class="card-content has-text-centered">
+              <h2 class="title has-text-centered">SAVED IMAGES OF THE DAY</h2>
+
+              <!--DISPLAY SAVED IMAGE WITH DATE-->
+              <h2 id="title"></h2>
+              <h3>Date:</h3>
+              <h3>Saved Image</h3>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-      
-      
-      <div class="column">
-        <div class="card has-text-centered">
-          <div class="card-content has-text-centered">
-            <h2 class="title has-text-centered">SAVED IMAGES OF THE DAY</h2>
-
-            <!--DISPLAY SAVED IMAGE WITH DATE-->
-            <h2 id="title"></h2>
-            <h3>Date:</h3>
-            <H3>Saved Image</H3>
-          
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
-  <script src="./assets/js/script.js"></script>
-</body>
-
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
