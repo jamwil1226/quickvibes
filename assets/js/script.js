@@ -254,6 +254,7 @@ const displayImage = function () {
     });
 };
 
+
 // FETCH ASTRONAUTS API
 const getAstronautApi = function (user) {
   const apiUrlAstronaut = 'https://lldev.thespacedevs.com/2.2.0/astronaut';
@@ -359,7 +360,28 @@ const displayAstronaut = function (data) {
   );
 };
 
+
+
+//
+ 
+  
 //SAVE IMAGE TO LOCAL STORAGE AND RETRIEVE
+
+// call getAstronautApi temporarly until a from element is made
+const getSave = function(imageUrl){
+  localStorage.setItem( "savedimage",imageUrl);
+  console.log(getSave)
+}
+
+var saveBtn = document.querySelector("#save")
+ saveBtn.addEventListener('click',getSave); 
+
+
+function imageOfTheDay(){
+  var input = document.getElementById("displayImage");
+  var storedValue = localStorage.getItem("displayImage");
+  
+}
 
 // call getAstronautApi temporarly until a from element is made
 //getAstronautApi();
