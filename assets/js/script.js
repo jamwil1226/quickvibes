@@ -239,6 +239,7 @@ const displayImage = function () {
       if (response.ok) {
         response.json().then(function (data) {
           getImageData(data);
+          saveImageData(data);
         });
       } else {
         alert('Error: Api issue');
@@ -569,18 +570,33 @@ const displayAstronaut = function (data) {
 //SAVE IMAGE TO LOCAL STORAGE AND RETRIEVE
 
 // call getAstronautApi temporarly until a from element is made
-const getSave = function (imageUrl) {
-  localStorage.setItem('savedimage', imageUrl);
-  console.log(getSave);
+
+// empty array for save
+let saveArray = [];
+
+const saveImageData = function (data) {
+  let imageSrc = data.url;
+  let savedImg = document.createElement('img');
+  savedImg.src = imageSrc;
+  savedImages.appendChild(savedImg);
+  saveArray.push(imageSrc);
+  localStorage.setItem('savedImage', JSON.stringify(saveArray));
 };
 
-var saveBtn = document.querySelector('#save');
-saveBtn.addEventListener('click', getSave);
+const loadSavedImages = function () {
+  let retrieveSavedImages = localStorage.getItem('savedImage');
+  let retrieveSavedImages2 = JSON.parse(retrieveSavedImages);
+  console.log(retrieveSavedImages2);
+  if (retrieveSavedImages2) {
+    retrieveSavedImages = retrieveSavedImages2;
+  } else {
+    retrieveSavedImages = [];
+  }
+};
 
-function imageOfTheDay() {
-  var input = document.getElementById('displayImage');
-  var storedValue = localStorage.getItem('displayImage');
-}
+loadSavedImages();
+var saveBtn = document.querySelector('#save');
+saveBtn.addEventListener('click', saveImageData);
 
 // call getAstronautApi temporarly until a from element is made
 //getAstronautApi();
