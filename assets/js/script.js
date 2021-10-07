@@ -206,8 +206,7 @@ const getAstronaut = document.querySelector('#astronautBtn');
 // FETCH LAUNCHES API
 const getLaunchesApi = function (user) {
   // format the github api url
-  const apiUrlLaunches =
-    'https://lldev.thespacedevs.com/2.2.0/launch/?limit=200';
+  const apiUrlLaunches = 'https://lldev.thespacedevs.com/2.2.0/launch/?';
 
   // make a request to the url
   fetch(apiUrlLaunches)
@@ -253,7 +252,7 @@ const displayImage = function () {
 
 // FETCH ASTRONAUTS API
 const getAstronautApi = function (user) {
-  const apiUrlAstronaut = 'https://lldev.thespacedevs.com/2.2.0/astronaut';
+  const apiUrlAstronaut = 'https://lldev.thespacedevs.com/2.2.0/astronaut/';
 
   fetch(apiUrlAstronaut)
     .then(function (response) {
@@ -280,6 +279,8 @@ const getImageData = function (data) {
   document.getElementById('pic').src = data.hdurl;
   document.getElementById('explanation').textContent = data.explanation;
 };
+
+// ------------------------------------------------------------------------
 
 // LIST OF LAUNCHES WHEN CLICKING BUTTON
 var displayLaunches = function (data) {
@@ -385,10 +386,182 @@ var displayLaunches = function (data) {
   document.querySelector('#description10').innerHTML = `${launchDesc10}`;
   document.querySelector('#status10').innerHTML = `${statusName10}`;
 };
+// -----------------------------------------------------------------------------
 
 // LIST OF ASTRONAUTS WHEN CLICKING BUTTON
 const displayAstronaut = function (data) {
   console.log(data);
+  // Astronaut Data 1
+  let astName = data.results[0].name;
+  let astNat = data.results[0].nationality;
+  let astStatus = data.results[0].status.name;
+  let astLast = data.results[0].last_flight.substring(0, 10);
+  let astWiki = data.results[0].wiki;
+  let astBio = data.results[0].bio;
+  let astPic = data.results[0].profile_image;
+
+  document.querySelector('#ast-name').innerHTML = `${astName}`;
+  document.querySelector('#ast-pic').src = `${astPic}`;
+  document.querySelector('#ast-nat').innerHTML = `${astNat}`;
+  document.querySelector('#ast-bio').innerHTML = `${astBio}`;
+  document.querySelector('#ast-status').innerHTML = `${astStatus}`;
+  document.querySelector('#ast-last').innerHTML = `${astLast}`;
+  document.querySelector('#ast-wiki').setAttribute('href', astWiki);
+  document.querySelector('#ast-wiki').innerHTML = `${astName}`;
+
+  // Astronaut Data 2
+  let astName2 = data.results[1].name;
+  let astNat2 = data.results[1].nationality;
+  let astStatus2 = data.results[1].status.name;
+  let astLast2 = data.results[1].last_flight.substring(0, 10);
+  let astWiki2 = data.results[1].wiki;
+  let astBio2 = data.results[1].bio;
+  let astPic2 = data.results[1].profile_image;
+
+  document.querySelector('#ast-name2').innerHTML = `${astName2}`;
+  document.querySelector('#ast-pic2').src = `${astPic2}`;
+  document.querySelector('#ast-nat2').innerHTML = `${astNat2}`;
+  document.querySelector('#ast-bio2').innerHTML = `${astBio2}`;
+  document.querySelector('#ast-status2').innerHTML = `${astStatus2}`;
+  document.querySelector('#ast-last2').innerHTML = `${astLast2}`;
+  document.querySelector('#ast-wiki2').setAttribute('href', astWiki2);
+  document.querySelector('#ast-wiki2').innerHTML = `${astName2}`;
+
+  // Astronaut Data 3
+  let astName3 = data.results[2].name;
+  let astNat3 = data.results[2].nationality;
+  let astStatus3 = data.results[2].status.name;
+  let astLast3 = data.results[2].last_flight.substring(0, 10);
+  let astWiki3 = data.results[2].wiki;
+  let astBio3 = data.results[2].bio;
+  let astPic3 = data.results[2].profile_image;
+
+  document.querySelector('#ast-name3').innerHTML = `${astName3}`;
+  document.querySelector('#ast-pic3').src = `${astPic3}`;
+  document.querySelector('#ast-nat3').innerHTML = `${astNat3}`;
+  document.querySelector('#ast-bio3').innerHTML = `${astBio3}`;
+  document.querySelector('#ast-status3').innerHTML = `${astStatus3}`;
+  document.querySelector('#ast-last3').innerHTML = `${astLast3}`;
+  document.querySelector('#ast-wiki3').setAttribute('href', astWiki3);
+  document.querySelector('#ast-wiki3').innerHTML = `${astName3}`;
+  // Astronaut Data 4
+  let astName4 = data.results[3].name;
+  let astNat4 = data.results[3].nationality;
+  let astStatus4 = data.results[3].status.name;
+  let astLast4 = data.results[3].last_flight.substring(0, 10);
+  let astWiki4 = data.results[3].wiki;
+  let astBio4 = data.results[3].bio;
+  let astPic4 = data.results[3].profile_image;
+
+  document.querySelector('#ast-name4').innerHTML = `${astName4}`;
+  document.querySelector('#ast-pic4').src = `${astPic4}`;
+  document.querySelector('#ast-nat4').innerHTML = `${astNat4}`;
+  document.querySelector('#ast-bio4').innerHTML = `${astBio4}`;
+  document.querySelector('#ast-status4').innerHTML = `${astStatus4}`;
+  document.querySelector('#ast-last4').innerHTML = `${astLast4}`;
+  document.querySelector('#ast-wiki4').setAttribute('href', astWiki4);
+  document.querySelector('#ast-wiki4').innerHTML = `${astName4}`;
+  // // Astronaut Data 5
+  let astName5 = data.results[4].name;
+  let astNat5 = data.results[4].nationality;
+  let astStatus5 = data.results[4].status.name;
+  let astWiki5 = data.results[4].wiki;
+  let astBio5 = data.results[4].bio;
+  let astPic5 = data.results[4].profile_image;
+
+  document.querySelector('#ast-name5').innerHTML = `${astName5}`;
+  document.querySelector('#ast-pic5').src = `${astPic5}`;
+  document.querySelector('#ast-nat5').innerHTML = `${astNat5}`;
+  document.querySelector('#ast-bio5').innerHTML = `${astBio5}`;
+  document.querySelector('#ast-status5').innerHTML = `${astStatus5}`;
+  document.querySelector('#ast-last5').innerHTML = `${'none'}`;
+  document.querySelector('#ast-wiki5').setAttribute('href', astWiki5);
+  document.querySelector('#ast-wiki5').innerHTML = `${astName5}`;
+  // // Astronaut Data 6
+  let astName6 = data.results[5].name;
+  let astNat6 = data.results[5].nationality;
+  let astStatus6 = data.results[5].status.name;
+  let astLast6 = data.results[5].last_flight.substring(0, 10);
+  let astWiki6 = data.results[5].wiki;
+  let astBio6 = data.results[5].bio;
+  let astPic6 = data.results[5].profile_image;
+
+  document.querySelector('#ast-name6').innerHTML = `${astName6}`;
+  document.querySelector('#ast-pic6').src = `${astPic6}`;
+  document.querySelector('#ast-nat6').innerHTML = `${astNat6}`;
+  document.querySelector('#ast-bio6').innerHTML = `${astBio6}`;
+  document.querySelector('#ast-status6').innerHTML = `${astStatus6}`;
+  document.querySelector('#ast-last6').innerHTML = `${astLast6}`;
+  document.querySelector('#ast-wiki6').setAttribute('href', astWiki6);
+  document.querySelector('#ast-wiki6').innerHTML = `${astName6}`;
+  // // Astronaut Data 7
+  let astName7 = data.results[6].name;
+  let astNat7 = data.results[6].nationality;
+  let astStatus7 = data.results[6].status.name;
+  let astLast7 = data.results[6].last_flight.substring(0, 10);
+  let astWiki7 = data.results[6].wiki;
+  let astBio7 = data.results[6].bio;
+  let astPic7 = data.results[6].profile_image;
+
+  document.querySelector('#ast-name7').innerHTML = `${astName7}`;
+  document.querySelector('#ast-pic7').src = `${astPic7}`;
+  document.querySelector('#ast-nat7').innerHTML = `${astNat7}`;
+  document.querySelector('#ast-bio7').innerHTML = `${astBio7}`;
+  document.querySelector('#ast-status7').innerHTML = `${astStatus7}`;
+  document.querySelector('#ast-last7').innerHTML = `${astLast7}`;
+  document.querySelector('#ast-wiki7').setAttribute('href', astWiki7);
+  document.querySelector('#ast-wiki7').innerHTML = `${astName7}`;
+  // // Astronaut Data 8
+  let astName8 = data.results[7].name;
+  let astNat8 = data.results[7].nationality;
+  let astStatus8 = data.results[7].status.name;
+  let astLast8 = data.results[7].last_flight.substring(0, 10);
+  let astWiki8 = data.results[7].wiki;
+  let astBio8 = data.results[7].bio;
+  let astPic8 = data.results[7].profile_image;
+
+  document.querySelector('#ast-name8').innerHTML = `${astName8}`;
+  document.querySelector('#ast-pic8').src = `${astPic8}`;
+  document.querySelector('#ast-nat8').innerHTML = `${astNat8}`;
+  document.querySelector('#ast-bio8').innerHTML = `${astBio8}`;
+  document.querySelector('#ast-status8').innerHTML = `${astStatus8}`;
+  document.querySelector('#ast-last8').innerHTML = `${astLast8}`;
+  document.querySelector('#ast-wiki8').setAttribute('href', astWiki8);
+  document.querySelector('#ast-wiki8').innerHTML = `${astName8}`;
+  // // Astronaut Data 9
+  let astName9 = data.results[8].name;
+  let astNat9 = data.results[8].nationality;
+  let astStatus9 = data.results[8].status.name;
+  let astLast9 = data.results[8].last_flight.substring(0, 10);
+  let astWiki9 = data.results[8].wiki;
+  let astBio9 = data.results[8].bio;
+  let astPic9 = data.results[8].profile_image;
+
+  document.querySelector('#ast-name9').innerHTML = `${astName9}`;
+  document.querySelector('#ast-pic9').src = `${astPic9}`;
+  document.querySelector('#ast-nat9').innerHTML = `${astNat9}`;
+  document.querySelector('#ast-bio9').innerHTML = `${astBio9}`;
+  document.querySelector('#ast-status9').innerHTML = `${astStatus9}`;
+  document.querySelector('#ast-last9').innerHTML = `${astLast9}`;
+  document.querySelector('#ast-wiki9').setAttribute('href', astWiki9);
+  document.querySelector('#ast-wiki9').innerHTML = `${astName9}`;
+  // // Astronaut Data 10
+  let astName10 = data.results[9].name;
+  let astNat10 = data.results[9].nationality;
+  let astStatus10 = data.results[9].status.name;
+  let astLast10 = data.results[9].last_flight.substring(0, 10);
+  let astWiki10 = data.results[9].wiki;
+  let astBio10 = data.results[9].bio;
+  let astPic10 = data.results[9].profile_image;
+
+  document.querySelector('#ast-name10').innerHTML = `${astName10}`;
+  document.querySelector('#ast-pic10').src = `${astPic10}`;
+  document.querySelector('#ast-nat10').innerHTML = `${astNat10}`;
+  document.querySelector('#ast-bio10').innerHTML = `${astBio10}`;
+  document.querySelector('#ast-status10').innerHTML = `${astStatus10}`;
+  document.querySelector('#ast-last10').innerHTML = `${astLast10}`;
+  document.querySelector('#ast-wiki10').setAttribute('href', astWiki10);
+  document.querySelector('#ast-wiki10').innerHTML = `${astName10}`;
 };
 
 //
