@@ -2,7 +2,77 @@
 
 // Api for NASA APOD https://api.nasa.gov/planetary/apod?api_key=nndUMOcl1g9pH4trtcU5C4Reha8gBSZ4cOfJrlWU
 
-//MODAL DISPLAY
+
+
+//MODAL DISPLAY FOR LAUNCH
+class BulmaModalLaunch {
+  constructor(selector) {
+    this.elem = document.querySelector(selector);
+    this.close_data();
+  }
+
+  show() {
+    this.elem.classList.toggle('is-active');
+    this.on_show();
+  }
+
+  close() {
+    this.elem.classList.toggle('is-active');
+    this.on_close();
+  }
+
+  close_data() {
+    var modalClose = this.elem.querySelectorAll(
+      "[data-bulma-modal='close'], .modal-background"
+    );
+    var that = this;
+    modalClose.forEach(function (e) {
+      e.addEventListener('click', function () {
+        that.elem.classList.toggle('is-active');
+
+        var event = new Event('modal:close');
+
+        that.elem.dispatchEvent(event);
+      });
+    });
+  }
+
+  on_show() {
+    var event = new Event('modal:show');
+
+    this.elem.dispatchEvent(event);
+  }
+
+  on_close() {
+    var event = new Event('modal:close');
+
+    this.elem.dispatchEvent(event);
+  }
+
+  addEventListener(event, callback) {
+    this.elem.addEventListener(event, callback);
+  }
+}
+
+var launchBtn = document.querySelector('#launchBtn');
+var launchMdl = new BulmaModalLaunch('#launchModal');
+
+launchBtn.addEventListener('click', function () {
+  launchMdl.show();
+});
+
+launchMdl.addEventListener('modal:show', function () {
+  console.log('opened');
+});
+
+launchMdl.addEventListener('modal:close', function () {
+  console.log('closed');
+});
+
+//END OF LAUNCH MODAL
+
+
+//MODAL DISPLAY FOR IMAGE OF THE DAY
 class BulmaModal {
   constructor(selector) {
     this.elem = document.querySelector(selector);
@@ -53,7 +123,7 @@ class BulmaModal {
 }
 
 var btn = document.querySelector('#btn');
-var mdl = new BulmaModal('#myModal');
+var mdl = new BulmaModal('#imageModal');
 
 btn.addEventListener('click', function () {
   mdl.show();
@@ -66,11 +136,78 @@ mdl.addEventListener('modal:show', function () {
 mdl.addEventListener('modal:close', function () {
   console.log('closed');
 });
-//END OF MODAL
+//END OF IMAGE MODAL
+
+//MODAL DISPLAY FOR ASTRONAUT
+class BulmaModalAstronaut {
+  constructor(selector) {
+    this.elem = document.querySelector(selector);
+    this.close_data();
+  }
+
+  show() {
+    this.elem.classList.toggle('is-active');
+    this.on_show();
+  }
+
+  close() {
+    this.elem.classList.toggle('is-active');
+    this.on_close();
+  }
+
+  close_data() {
+    var modalClose = this.elem.querySelectorAll(
+      "[data-bulma-modal='close'], .modal-background"
+    );
+    var that = this;
+    modalClose.forEach(function (e) {
+      e.addEventListener('click', function () {
+        that.elem.classList.toggle('is-active');
+
+        var event = new Event('modal:close');
+
+        that.elem.dispatchEvent(event);
+      });
+    });
+  }
+
+  on_show() {
+    var event = new Event('modal:show');
+
+    this.elem.dispatchEvent(event);
+  }
+
+  on_close() {
+    var event = new Event('modal:close');
+
+    this.elem.dispatchEvent(event);
+  }
+
+  addEventListener(event, callback) {
+    this.elem.addEventListener(event, callback);
+  }
+}
+
+var astronautBtn = document.querySelector('#astronautBtn');
+var astronautMdl = new BulmaModalAstronaut('#astronautModal');
+
+astronautBtn.addEventListener('click', function () {
+  astronautMdl.show();
+});
+
+astronautMdl.addEventListener('modal:show', function () {
+  console.log('opened');
+});
+
+astronautMdl.addEventListener('modal:close', function () {
+  console.log('closed');
+});
+//END OF ASTRONAUT MODAL
 
 const getLaunches = document.querySelector('#launchBtn');
+const getAstronaut = document.querySelector('#astronautBtn')
 
-//DISPLAY DIFFERENT LAUNCHES
+// FETCH LAUNCHES API
 const getLaunchesApi = function (user) {
   // format the github api url
   const apiUrlLaunches = 'https://lldev.thespacedevs.com/2.2.0/launch';
@@ -93,7 +230,7 @@ const getLaunchesApi = function (user) {
     });
 };
 
-//DAILY IMAGES DISPLAY
+// FETCH IMAGES API
 // format the github api url
 const displayImage = function () {
   const apiUrlImages =
@@ -117,18 +254,10 @@ const displayImage = function () {
     });
 };
 
-// function for passing in data from displayImage fetch
-const getImageData = function (data) {
-  console.log(data);
-  document.getElementById('title').textContent = data.title;
-  document.getElementById('date').textContent = data.date;
-  document.getElementById('pic').src = data.hdurl;
-  document.getElementById('explanation').textContent = data.explanation;
-};
-
+// FETCH ASTRONAUTS API
 const getAstronautApi = function (user) {
   const apiUrlAstronaut = 'https://lldev.thespacedevs.com/2.2.0/astronaut';
-
+    
   fetch(apiUrlAstronaut)
     .then(function (response) {
       // request was successful
@@ -146,17 +275,46 @@ const getAstronautApi = function (user) {
     });
 };
 
-const displayLaunches = function (data) {
+// function for passing in data from getLaunchesApi fetch
+const getLaunchData = function (data) {
+  console.log(data);
+  document.getElementById('name').textContent = data.name;
+  document.getElementById('status').textContent = data.status;
+  document.getElementById('launch-pic').src = data.url;
+  document.getElementById('description').textContent = data.description;
+};
+
+
+// function for passing in data from displayImage fetch
+const getImageData = function (data) {
+  console.log(data);
+  document.getElementById('title').textContent = data.title;
+  document.getElementById('date').textContent = data.date;
+  document.getElementById('pic').src = data.hdurl;
+  document.getElementById('explanation').textContent = data.explanation;
+};
+
+// function for passing in data from getAstronautsApi fetch
+const getAstronautData = function (data) {
+  console.log(data);
+  document.getElementById('name').textContent = data.name;
+  document.getElementById('bio').textContent = data.bio;
+  document.getElementById('astraonaut-pic').src = data.url;
+  document.getElementById('date_of_birth').textContent = data.date_of_birth;
+};
+
+// LIST OF LAUNCHES WHEN CLICKING BUTTON 
+var displayLaunches = function (data) {
   console.log(data);
   $('#dropdown-main').attr('style', 'display:block');
-  var ddtrig = $('<div>').addClass('dropdown-trigger'); // container for a button
-  var ddBtn = $('<button>')
-    .addClass('button')
-    .attr('aria-haspopup', 'true')
-    .attr('aria-controls', 'dropdown-menu'); // toggable menu, hidden by default
-  var span1 = $('<span>').text('dropdownbtn');
-  var span2 = $('<span>').addClass('icon is-small');
-  var icon = $('<i>').addClass('fas fa-angle-down').attr('aria-hidden', 'true');
+  //var ddtrig = $('<div>').addClass('dropdown-trigger'); // container for a button
+  //var ddBtn = $('<button>')
+    //.addClass('button')
+    //.attr('aria-haspopup', 'true')
+    //.attr('aria-controls', 'dropdown-menu'); // toggable menu, hidden by default
+  //var span1 = $('<span>').text('dropdownbtn');
+  //var span1 = $('<span>').addClass('icon is-small');
+  //var icon = $('<i>').addClass('fas fa-angle-down').attr('aria-hidden', 'true');
   var ddmenu = $('<div>')
     .addClass('dropdown-menu')
     .attr('id', 'dropdown-menu')
@@ -168,16 +326,40 @@ const displayLaunches = function (data) {
     ddcontent.append(a);
   }
   $('#dropdown-main').append(
-    ddtrig.append(ddBtn.append(span1, span2.append(icon))),
+    //ddtrig.append(ddBtn.append),
     ddmenu.append(ddcontent)
   );
 };
 
+// LIST OF ASTRONAUTS WHEN CLICKING BUTTON 
 const displayAstronaut = function (data) {
   console.log(data);
+  $('#dropdown-main').attr('style', 'display:block');
+  //var ddtrig = $('<div>').addClass('dropdown-trigger'); // container for a button
+  //var ddBtn = $('<button>')
+    //.addClass('button')
+    //.attr('aria-haspopup', 'true')
+    //.attr('aria-controls', 'dropdown-menu'); // toggable menu, hidden by default
+  //var span1 = $('<span>').text('dropdownbtn');
+  //var span1 = $('<span>').addClass('icon is-small');
+  //var icon = $('<i>').addClass('fas fa-angle-down').attr('aria-hidden', 'true');
+  var ddmenu = $('<div>')
+    .addClass('dropdown-menu')
+    .attr('id', 'dropdown-menu')
+    .attr('role', 'menu');
+  var ddcontent = $('<div>').addClass('dropdown-content'); // dropdown box, with a white background and a shadow
+  for (var i = 0; i < data.results.length; i++) {
+    console.log(data.results[i]);
+    var a = $('<a>').addClass('dropdown-item').text(data.results[i].name);
+    ddcontent.append(a);
+  }
+  $('#dropdown-main').append(
+    //ddtrig.append(ddBtn.append),
+   ddmenu.append(ddcontent)
+  );
 };
 
 //SAVE IMAGE TO LOCAL STORAGE AND RETRIEVE
 
 // call getAstronautApi temporarly until a from element is made
-getAstronautApi();
+//getAstronautApi();
