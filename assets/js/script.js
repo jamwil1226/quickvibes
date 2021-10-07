@@ -282,16 +282,87 @@ const getImageData = function (data) {
 
 // LIST OF LAUNCHES WHEN CLICKING BUTTON
 var displayLaunches = function (data) {
+  // Launch Data 1
   console.log(data);
   let launchName = data.results[0].name;
   let statusName = data.results[0].status.abbrev;
   let launchDesc = data.results[0].mission.description;
-  let launchImage = data.results[0].image;
 
   document.querySelector('#name').innerHTML = `${launchName}`;
   document.querySelector('#description').innerHTML = `${launchDesc}`;
   document.querySelector('#status').innerHTML = `${statusName}`;
-  document.querySelector('#launch-pic').src = `${launchImage}`;
+  // Launch Data 2
+  let launchName2 = data.results[1].name;
+  let statusName2 = data.results[1].status.abbrev;
+  let launchDesc2 = data.results[1].mission.description;
+
+  document.querySelector('#name2').innerHTML = `${launchName2}`;
+  document.querySelector('#description2').innerHTML = `${launchDesc2}`;
+  document.querySelector('#status2').innerHTML = `${statusName2}`;
+  // Launch Data 3
+  let launchName3 = data.results[2].name;
+  let statusName3 = data.results[2].status.abbrev;
+  let launchDesc3 = data.results[2].mission.description;
+
+  document.querySelector('#name3').innerHTML = `${launchName3}`;
+  document.querySelector('#description3').innerHTML = `${launchDesc3}`;
+  document.querySelector('#status3').innerHTML = `${statusName3}`;
+  // Launch Data 4
+  let launchName4 = data.results[3].name;
+  let statusName4 = data.results[3].status.abbrev;
+  let launchDesc4 = data.results[3].mission.description;
+
+  document.querySelector('#name4').innerHTML = `${launchName4}`;
+  document.querySelector('#description4').innerHTML = `${launchDesc4}`;
+  document.querySelector('#status4').innerHTML = `${statusName4}`;
+  // Launch Data 5
+  let launchName5 = data.results[4].name;
+  let statusName5 = data.results[4].status.abbrev;
+  let launchDesc5 = data.results[4].mission.description;
+
+  document.querySelector('#name5').innerHTML = `${launchName5}`;
+  document.querySelector('#description5').innerHTML = `${launchDesc5}`;
+  document.querySelector('#status5').innerHTML = `${statusName5}`;
+  // Launch Data 6
+  let launchName6 = data.results[5].name;
+  let statusName6 = data.results[5].status.abbrev;
+  let launchDesc6 = data.results[5].mission.description;
+
+  document.querySelector('#name6').innerHTML = `${launchName6}`;
+  document.querySelector('#description6').innerHTML = `${launchDesc6}`;
+  document.querySelector('#status6').innerHTML = `${statusName6}`;
+  // Launch Data 7
+  let launchName7 = data.results[6].name;
+  let statusName7 = data.results[6].status.abbrev;
+  let launchDesc7 = data.results[6].mission.description;
+
+  document.querySelector('#name7').innerHTML = `${launchName7}`;
+  document.querySelector('#description7').innerHTML = `${launchDesc7}`;
+  document.querySelector('#status7').innerHTML = `${statusName7}`;
+  // Launch Data 8
+  let launchName8 = data.results[7].name;
+  let statusName8 = data.results[7].status.abbrev;
+  let launchDesc8 = data.results[7].mission.description;
+
+  document.querySelector('#name8').innerHTML = `${launchName8}`;
+  document.querySelector('#description8').innerHTML = `${launchDesc8}`;
+  document.querySelector('#status8').innerHTML = `${statusName8}`;
+  // Launch Data 9
+  let launchName9 = data.results[8].name;
+  let statusName9 = data.results[8].status.abbrev;
+  let launchDesc9 = data.results[8].mission.description;
+
+  document.querySelector('#name9').innerHTML = `${launchName9}`;
+  document.querySelector('#description9').innerHTML = `${launchDesc9}`;
+  document.querySelector('#status9').innerHTML = `${statusName9}`;
+  // Launch Data 10
+  let launchName10 = data.results[9].name;
+  let statusName10 = data.results[9].status.abbrev;
+  let launchDesc10 = data.results[9].mission.description;
+
+  document.querySelector('#name10').innerHTML = `${launchName10}`;
+  document.querySelector('#description10').innerHTML = `${launchDesc10}`;
+  document.querySelector('#status10').innerHTML = `${statusName10}`;
 };
 
 // LIST OF ASTRONAUTS WHEN CLICKING BUTTON
