@@ -576,11 +576,13 @@ let saveArray = [];
 
 const saveImageData = function (data) {
   let imageSrc = data.url;
-  let savedImg = document.createElement('img');
-  savedImg.src = imageSrc;
-  savedImages.appendChild(savedImg);
-  saveArray.push(imageSrc);
-  localStorage.setItem('savedImage', JSON.stringify(saveArray));
+  if (imageSrc != null) {
+    saveArray.push(imageSrc);
+    localStorage.setItem('savedImage', JSON.stringify(saveArray));
+    let savedImg = document.createElement('img');
+    savedImg.src = imageSrc;
+    savedImages.appendChild(savedImg);
+  }
 };
 
 const loadSavedImages = function () {
