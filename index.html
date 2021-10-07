@@ -9,9 +9,21 @@
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <style>
+      body {
+        background: url(assets/images/milky-way.jpg) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+    </style>
   </head>
 
   <body>
+
+    
+
     <!-- Hero Section -->
     <section class="hero is-link">
       <div class="container">
@@ -75,58 +87,7 @@
               View Image
             </button>
           </div>
-        </div>
       </div>
-
-
-                  <!--MODAL TO DISPLAY IMAGE OF THE DAY-->
-                  <div class="modal" id="myModal">
-                    <div class="modal-background"></div>
-                    <div class="modal-card">
-                      <header class="modal-card-head">
-                        <p class="modal-card-title">
-                          NASA's APOD Image of the day!
-                        </p>
-                        <button
-                          class="delete"
-                          aria-label="close"
-                          data-bulma-modal="close"
-                        ></button>
-                      </header>
-                      <section class="modal-card-body">
-                        <h2 id="title"></h2>
-                        <h3>Date: <span id="date"></span></h3>
-                        <img
-                          id="pic"
-                          src=""
-                          alt="NASA Picture Of The Day"
-                          width="100%"
-                        />
-                        <p id="explanation"></p>
-                      </section>
-                      <footer class="modal-card-foot">
-                        <button
-                          id="save"
-                          class="button is-success"
-                          data-bulma-modal="close"
-                          >
-                          Save
-                        </button>
-                        <button class="button" data-bulma-modal="close">
-                          Cancel
-                        </button>
-                      </footer>
-                    </div>
-                  </div>
-
-                  <button
-                    id="btn"
-                    class="button is-link is-rounded"
-                    click="displayImage()"
-                  >
-                    Click Here!
-                  </button>
-
     </div>
 
             <!--MODAL TO DISPLAY LAUNCH-->
@@ -232,11 +193,12 @@
               </div>
             </div>
 
-
+      
+        
     <div class="columns">
       <div class="column">
-        <div class="card">
-          <div class="card has-text-centered">
+        <div class="card has-text-centered">
+          <div class="card-content has-text-centered">
             <h2 class="title has-text-centered">
               FAMOUS ASTRONAUTS
             </h2>
