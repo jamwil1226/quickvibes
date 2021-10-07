@@ -359,29 +359,31 @@ const displayAstronaut = function (data) {
    ddmenu.append(ddcontent)
   );
 };
-
-
-
-//
  
-  
 //SAVE IMAGE TO LOCAL STORAGE AND RETRIEVE
 
-// call getAstronautApi temporarly until a from element is made
-const getSave = function(imageUrl){
-  localStorage.setItem( "savedimage",imageUrl);
-  console.log(getSave)
-}
+//const getSave = function(imageUrl){
+  //localStorage.setItem( "savedimage",imageUrl);
+  //console.log(getSave)
+//}
 
-var saveBtn = document.querySelector("#save")
- saveBtn.addEventListener('click',getSave); 
+//var saveBtn = document.querySelector("#save")
+ //saveBtn.addEventListener('click',getSave); 
 
 
-function imageOfTheDay(){
-  var input = document.getElementById("displayImage");
-  var storedValue = localStorage.getItem("displayImage");
+//function imageOfTheDay(){
+  //var input = document.getElementById("displayImage");
+  //var storedValue = localStorage.getItem("displayImage");
   
-}
+//}
 
-// call getAstronautApi temporarly until a from element is made
-//getAstronautApi();
+//Jamie's code for local storage
+
+const saveImage = document.querySelector("#pic");
+const saveButton = document.querySelector("#save");
+
+const saveToLocal = () => {
+  localStorage.setItem('click', saveImage)
+}
+saveButton.addEventListener('click', saveToLocal)
+
