@@ -58,11 +58,6 @@
         <div class="card has-text-centered">
           <div class="card-content">
             <h2 class="title has-text-centered">HISTORICAL LAUNCHES</h2>
-            <div
-              style="display: none;"
-              class="dropdown is-active"
-              id="dropdown-main">
-            </div>
             <!--ON CLICK FUNCTION TO OPTIONS DROP DOWN MENU-->
             <button
               id="launchBtn"
@@ -88,6 +83,49 @@
             </button>
           </div>
       </div>
+
+
+
+                  <!--MODAL TO DISPLAY IMAGE OF THE DAY-->
+                  <div class="modal" id="myModal">
+                    <div class="modal-background"></div>
+                    <div class="modal-card">
+                      <header class="modal-card-head">
+                        <p class="modal-card-title">
+                          NASA's APOD Image of the day!
+                        </p>
+                        <button
+                          class="delete"
+                          aria-label="close"
+                          data-bulma-modal="close"
+                        ></button>
+                      </header>
+                      <section class="modal-card-body">
+                        <h2 id="title"></h2>
+                        <h3>Date: <span id="date"></span></h3>
+                        <img
+                          id="pic"
+                          src=""
+                          alt="NASA Picture Of The Day"
+                          width="100%"
+                        />
+                        <p id="explanation"></p>
+                      </section>
+                      <footer class="modal-card-foot">
+                        <button
+                          id="save"
+                          class="button is-success"
+                          data-bulma-modal="close"
+                          >
+                          Save
+                        </button>
+                        <button class="button" data-bulma-modal="close">
+                          Cancel
+                        </button>
+                      </footer>
+                    </div>
+                  </div>
+
     </div>
 
             <!--MODAL TO DISPLAY LAUNCH-->
@@ -96,6 +134,7 @@
                 <div class="modal-card">
                   <header class="modal-card-head">
                     <section class="modal-card-title">
+                      <h2>Historical Launches</h2>
                     </section>
                     <button
                       class="delete"
@@ -104,16 +143,106 @@
                     </button>
                   </header>
                   <section class="modal-card-body">
-                    <!-- all launches go here -->
+                    <!-- launch 1 -->
+                    <span class="title-text">Rocket</span>
                     <h2 id="name"></h2>
+                    <h3>Date</h3>
+                    <p id="date-text"></p>
+                    <h3>Status</h3>
                     <p id="status"></p>
-                    <img
-                      id="launch-pic"
-                      src=""
-                      alt=""
-                      width="100%"
-                    />
+                    <h3>Description</h3>
                     <p id="description"></p>
+                    <div class="border-bottom"></div>
+                    <!-- launch 2 -->
+                    <span class="title-text">Rocket</span>
+                    <h2 id="name2"></h2>
+                    <h3>Date</h3>
+                    <p id="date-text2"></p>
+                    <h3>Status</h3>
+                    <p id="status2"></p>
+                    <h3>Description</h3>
+                    <p id="description2"></p>
+                    <div class="border-bottom"></div>
+                    <!-- launch 3 -->
+                    <span class="title-text">Rocket</span>
+                    <h2 id="name3"></h2>
+                    <h3>Date</h3>
+                    <p id="date-text3"></p>
+                    <h3>Status</h3>
+                    <p id="status3"></p>
+                    <h3>Description</h3>
+                    <p id="description3"></p>
+                    <div class="border-bottom"></div>
+                    <!-- launch 4 -->
+                    <span class="title-text">Rocket</span>
+                    <h2 id="name4"></h2>
+                    <h3>Date</h3>
+                    <p id="date-text4"></p>
+                    <h3>Status</h3>
+                    <p id="status4"></p>
+                    <h3>Description</h3>
+                    <p id="description4"></p>
+                    <div class="border-bottom"></div>
+                    <!-- launch 5 -->
+                    <span class="title-text">Rocket</span>
+                    <h2 id="name5"></h2>
+                    <h3>Date</h3>
+                    <p id="date-text5"></p>
+                    <h3>Status</h3>
+                    <p id="status5"></p>
+                    <h3>Description</h3>
+                    <p id="description5"></p>
+                    <div class="border-bottom"></div>
+                    <!-- launch 6 -->
+                    <span class="title-text">Rocket</span>
+                    <h2 id="name6"></h2>
+                    <h3>Date</h3>
+                    <p id="date-text6"></p>
+                    <h3>Status</h3>
+                    <p id="status6"></p>
+                    <h3>Description</h3>
+                    <p id="description6"></p>
+                    <div class="border-bottom"></div>
+                    <!-- launch 7 -->
+                    <span class="title-text">Rocket</span>
+                    <h2 id="name7"></h2>
+                    <h3>Date</h3>
+                    <p id="date-text7"></p>
+                    <h3>Status</h3>
+                    <p id="status7"></p>
+                    <h3>Description</h3>
+                    <p id="description7"></p>
+                    <div class="border-bottom"></div>
+                    <!-- launch 8 -->
+                    <span class="title-text">Rocket</span>
+                    <h2 id="name8"></h2>
+                    <h3>Date</h3>
+                    <p id="date-text8"></p>
+                    <h3>Status</h3>
+                    <p id="status8"></p>
+                    <h3>Description</h3>
+                    <p id="description8"></p>
+                    <div class="border-bottom"></div>
+                    <!-- launch 9 -->
+                    <span class="title-text">Rocket</span>
+                    <h2 id="name9"></h2>
+                    <h3>Date</h3>
+                    <p id="date-text9"></p>
+                    <h3>Status</h3>
+                    <p id="status9"></p>
+                    <h3>Description</h3>
+                    <p id="description9"></p>
+                    <div class="border-bottom"></div>
+                    <!-- launch 10 -->
+                    <span class="title-text">Rocket</span>
+                    <h2 id="name10"></h2>
+                    <h3>Date</h3>
+                    <p id="date-text10"></p>
+                    <h3>Status</h3>
+                    <p id="status10"></p>
+                    <h3>Description</h3>
+                    <p id="description10"></p>
+                    <div class="border-bottom"></div>
                   </section>
                   <footer class="modal-card-foot">
                   </footer>
@@ -177,15 +306,196 @@
                   </header>
                   <section class="modal-card-body">
                     <!-- All astronauts go here -->
-                    <h2 id="name"></h2>
-                    <p id="bio"></p>
+                        <!-- Astronaut 1 -->
+                    <span class="title-text">Astronaut</span>
+                    <h2 id="ast-name"></h2>
                     <img
-                      id="astronaut-pic"
+                      id="ast-pic"
                       src=""
-                      alt=""
-                      width="100%"
+                      alt="Astronaut Picture"
                     />
-                    <p id="date_of_birth"></p>
+                    <h3>Nationality</h3>
+                    <p id="ast-nat"></p>
+                    <h3>Bio</h3>
+                    <p id="ast-bio"></p>
+                    <h3>Status</h3>
+                    <p id="ast-status"></p>
+                    <h3>Last Flight</h3>
+                    <p id="ast-last"></p>
+                    <h3>Wikipedia</h3>
+                    <a href="" id ="ast-wiki" ></a>
+                    <div class="border-bottom"></div>
+                    <!-- Astronaut 2 -->
+                       <span class="title-text">Astronaut</span>
+                    <h2 id="ast-name2"></h2>
+                    <img
+                      id="ast-pic2"
+                      src=""
+                      alt="Astronaut Picture"
+                    />
+                    <h3>Nationality</h3>
+                    <p id="ast-nat2"></p>
+                    <h3>Bio</h3>
+                    <p id="ast-bio2"></p>
+                    <h3>Status</h3>
+                    <p id="ast-status2"></p>
+                    <h3>Last Flight</h3>
+                    <p id="ast-last2"></p>
+                    <h3>Wikipedia</h3>
+                    <a href="" id ="ast-wiki2" ></a>
+                    <div class="border-bottom"></div>
+                    <!-- Astronaut 3 -->
+                   <span class="title-text">Astronaut</span>
+                    <h2 id="ast-name3"></h2>
+                    <img
+                      id="ast-pic3"
+                      src=""
+                      alt="Astronaut Picture"
+                    />
+                    <h3>Nationality</h3>
+                    <p id="ast-nat3"></p>
+                    <h3>Bio</h3>
+                    <p id="ast-bio3"></p>
+                    <h3>Status</h3>
+                    <p id="ast-status3"></p>
+                    <h3>Last Flight</h3>
+                    <p id="ast-last3"></p>
+                    <h3>Wikipedia</h3>
+                    <a href="" id ="ast-wiki3" ></a>
+                    <div class="border-bottom"></div>
+                    <!-- Astronaut 4 -->
+                      <span class="title-text">Astronaut</span>
+                    <h2 id="ast-name4"></h2>
+                    <img
+                      id="ast-pic4"
+                      src=""
+                      alt="Astronaut Picture"
+                    />
+                    <h3>Nationality</h3>
+                    <p id="ast-nat4"></p>
+                    <h3>Bio</h3>
+                    <p id="ast-bio4"></p>
+                    <h3>Status</h3>
+                    <p id="ast-status4"></p>
+                    <h3>Last Flight</h3>
+                    <p id="ast-last4"></p>
+                    <h3>Wikipedia</h3>
+                    <a href="" id ="ast-wiki4" ></a>
+                    <div class="border-bottom"></div>
+                    <!-- Astronaut 5 -->
+                <span class="title-text">Astronaut</span>
+                    <h2 id="ast-name5"></h2>
+                    <img
+                      id="ast-pic5"
+                      src=""
+                      alt="Astronaut Picture"
+                    />
+                    <h3>Nationality</h3>
+                    <p id="ast-nat5"></p>
+                    <h3>Bio</h3>
+                    <p id="ast-bio5"></p>
+                    <h3>Status</h3>
+                    <p id="ast-status5"></p>
+                    <h3>Last Flight</h3>
+                    <p id="ast-last5"></p>
+                    <h3>Wikipedia</h3>
+                    <a href="" id ="ast-wiki5" ></a>
+                    <div class="border-bottom"></div>
+                    <!-- Astronaut 6 -->
+                <span class="title-text">Astronaut</span>
+                    <h2 id="ast-name6"></h2>
+                    <img
+                      id="ast-pic6"
+                      src=""
+                      alt="Astronaut Picture"
+                    />
+                    <h3>Nationality</h3>
+                    <p id="ast-nat6"></p>
+                    <h3>Bio</h3>
+                    <p id="ast-bio6"></p>
+                    <h3>Status</h3>
+                    <p id="ast-status6"></p>
+                    <h3>Last Flight</h3>
+                    <p id="ast-last6"></p>
+                    <h3>Wikipedia</h3>
+                    <a href="" id ="ast-wiki6" ></a>
+                    <div class="border-bottom"></div>
+                    <!-- Astronaut 7 -->
+                    <span class="title-text">Astronaut</span>
+                    <h2 id="ast-name7"></h2>
+                    <img
+                      id="ast-pic7"
+                      src=""
+                      alt="Astronaut Picture"
+                    />
+                    <h3>Nationality</h3>
+                    <p id="ast-nat7"></p>
+                    <h3>Bio</h3>
+                    <p id="ast-bio7"></p>
+                    <h3>Status</h3>
+                    <p id="ast-status7"></p>
+                    <h3>Last Flight</h3>
+                    <p id="ast-last7"></p>
+                    <h3>Wikipedia</h3>
+                    <a href="" id ="ast-wiki7" ></a>
+                    <div class="border-bottom"></div>
+                    <!-- Astronaut 8 -->
+                    <span class="title-text">Astronaut</span>
+                    <h2 id="ast-name8"></h2>
+                    <img
+                      id="ast-pic8"
+                      src=""
+                      alt="Astronaut Picture"
+                    />
+                    <h3>Nationality</h3>
+                    <p id="ast-nat8"></p>
+                    <h3>Bio</h3>
+                    <p id="ast-bio8"></p>
+                    <h3>Status</h3>
+                    <p id="ast-status8"></p>
+                    <h3>Last Flight</h3>
+                    <p id="ast-last8"></p>
+                    <h3>Wikipedia</h3>
+                    <a href="" id ="ast-wiki8" ></a>
+                    <div class="border-bottom"></div>
+                    <!-- Astronaut 9 -->
+                    <span class="title-text">Astronaut</span>
+                    <h2 id="ast-name9"></h2>
+                    <img
+                      id="ast-pic9"
+                      src=""
+                      alt="Astronaut Picture"
+                    />
+                    <h3>Nationality</h3>
+                    <p id="ast-nat9"></p>
+                    <h3>Bio</h3>
+                    <p id="ast-bio9"></p>
+                    <h3>Status</h3>
+                    <p id="ast-status9"></p>
+                    <h3>Last Flight</h3>
+                    <p id="ast-last9"></p>
+                    <h3>Wikipedia</h3>
+                    <a href="" id ="ast-wiki9" ></a>
+                    <div class="border-bottom"></div>
+                    <!-- Astronaut 10 -->
+                    <span class="title-text">Astronaut</span>
+                    <h2 id="ast-name10"></h2>
+                    <img
+                      id="ast-pic10"
+                      src=""
+                      alt="Astronaut Picture"
+                    />
+                    <h3>Nationality</h3>
+                    <p id="ast-nat10"></p>
+                    <h3>Bio</h3>
+                    <p id="ast-bio10"></p>
+                    <h3>Status</h3>
+                    <p id="ast-status10"></p>
+                    <h3>Last Flight</h3>
+                    <p id="ast-last10"></p>
+                    <h3>Wikipedia</h3>
+                    <a href="" id ="ast-wiki10" ></a>
+                    <div class="border-bottom"></div>
                   </section>
                   <footer class="modal-card-foot">
                   </footer>
