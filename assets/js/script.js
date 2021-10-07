@@ -119,12 +119,15 @@ const displayImage = function () {
 };
 
 // function for passing in data from displayImage fetch
+
 const getImageData = function (data) {
   console.log(data);
   document.getElementById('title').textContent = data.title;
   document.getElementById('date').textContent = data.date;
   document.getElementById('pic').src = data.hdurl;
   document.getElementById('explanation').textContent = data.explanation;
+  var imageUrl = data.hdurl;
+  getSave(imageUrl) 
 };
 
 const getAstronautApi = function (user) {
@@ -180,8 +183,25 @@ const displayAstronaut = function (data) {
   console.log(data);
 };
 
+
+
+//
+ 
+  
 //SAVE IMAGE TO LOCAL STORAGE AND RETRIEVE
 // call getAstronautApi temporarly until a from element is made
-getAstronautApi();
+const getSave = function(imageUrl){
+  localStorage.setItem( "savedimage",imageUrl);
+  console.log(getSave)
+}
 
-getLaunches.addEventListener('click', getLaunchesApi);
+var saveBtn = document.querySelector("#save")
+ saveBtn.addEventListener('click',getSave); 
+
+
+function imageOfTheDay(){
+  var input = document.getElementById("displayImage");
+  var storedValue = localStorage.getItem("displayImage");
+  
+}
+
