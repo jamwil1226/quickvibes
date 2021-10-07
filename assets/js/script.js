@@ -2,8 +2,6 @@
 
 // Api for NASA APOD https://api.nasa.gov/planetary/apod?api_key=nndUMOcl1g9pH4trtcU5C4Reha8gBSZ4cOfJrlWU
 
-
-
 //MODAL DISPLAY FOR LAUNCH
 class BulmaModalLaunch {
   constructor(selector) {
@@ -39,7 +37,6 @@ class BulmaModalLaunch {
 
   on_show() {
     var event = new Event('modal:show');
-
     this.elem.dispatchEvent(event);
   }
 
@@ -70,7 +67,6 @@ launchMdl.addEventListener('modal:close', function () {
 });
 
 //END OF LAUNCH MODAL
-
 
 //MODAL DISPLAY FOR IMAGE OF THE DAY
 class BulmaModal {
@@ -205,7 +201,7 @@ astronautMdl.addEventListener('modal:close', function () {
 //END OF ASTRONAUT MODAL
 
 const getLaunches = document.querySelector('#launchBtn');
-const getAstronaut = document.querySelector('#astronautBtn')
+const getAstronaut = document.querySelector('#astronautBtn');
 
 // FETCH LAUNCHES API
 const getLaunchesApi = function (user) {
@@ -254,11 +250,10 @@ const displayImage = function () {
     });
 };
 
-
 // FETCH ASTRONAUTS API
 const getAstronautApi = function (user) {
   const apiUrlAstronaut = 'https://lldev.thespacedevs.com/2.2.0/astronaut';
-    
+
   fetch(apiUrlAstronaut)
     .then(function (response) {
       // request was successful
@@ -276,16 +271,6 @@ const getAstronautApi = function (user) {
     });
 };
 
-// function for passing in data from getLaunchesApi fetch
-const getLaunchData = function (data) {
-  console.log(data);
-  document.getElementById('name').textContent = data.name;
-  document.getElementById('status').textContent = data.status;
-  document.getElementById('launch-pic').src = data.url;
-  document.getElementById('description').textContent = data.description;
-};
-
-
 // function for passing in data from displayImage fetch
 const getImageData = function (data) {
   console.log(data);
@@ -295,92 +280,41 @@ const getImageData = function (data) {
   document.getElementById('explanation').textContent = data.explanation;
 };
 
-// function for passing in data from getAstronautsApi fetch
-const getAstronautData = function (data) {
-  console.log(data);
-  document.getElementById('name').textContent = data.name;
-  document.getElementById('bio').textContent = data.bio;
-  document.getElementById('astraonaut-pic').src = data.url;
-  document.getElementById('date_of_birth').textContent = data.date_of_birth;
-};
-
-// LIST OF LAUNCHES WHEN CLICKING BUTTON 
+// LIST OF LAUNCHES WHEN CLICKING BUTTON
 var displayLaunches = function (data) {
   console.log(data);
-  $('#dropdown-main').attr('style', 'display:block');
-  //var ddtrig = $('<div>').addClass('dropdown-trigger'); // container for a button
-  //var ddBtn = $('<button>')
-    //.addClass('button')
-    //.attr('aria-haspopup', 'true')
-    //.attr('aria-controls', 'dropdown-menu'); // toggable menu, hidden by default
-  //var span1 = $('<span>').text('dropdownbtn');
-  //var span1 = $('<span>').addClass('icon is-small');
-  //var icon = $('<i>').addClass('fas fa-angle-down').attr('aria-hidden', 'true');
-  var ddmenu = $('<div>')
-    .addClass('dropdown-menu')
-    .attr('id', 'dropdown-menu')
-    .attr('role', 'menu');
-  var ddcontent = $('<div>').addClass('dropdown-content'); // dropdown box, with a white background and a shadow
-  for (var i = 0; i < data.results.length; i++) {
-    console.log(data.results[i]);
-    var a = $('<a>').addClass('dropdown-item').text(data.results[i].name);
-    ddcontent.append(a);
-  }
-  $('#dropdown-main').append(
-    //ddtrig.append(ddBtn.append),
-    ddmenu.append(ddcontent)
-  );
+  let launchName = data.results[0].name;
+  let statusName = data.results[0].status.abbrev;
+  let launchDesc = data.results[0].mission.description;
+  let launchImage = data.results[0].image;
+
+  document.querySelector('#name').innerHTML = `${launchName}`;
+  document.querySelector('#description').innerHTML = `${launchDesc}`;
+  document.querySelector('#status').innerHTML = `${statusName}`;
+  document.querySelector('#launch-pic').src = `${launchImage}`;
 };
 
-// LIST OF ASTRONAUTS WHEN CLICKING BUTTON 
+// LIST OF ASTRONAUTS WHEN CLICKING BUTTON
 const displayAstronaut = function (data) {
   console.log(data);
-  $('#dropdown-main').attr('style', 'display:block');
-  //var ddtrig = $('<div>').addClass('dropdown-trigger'); // container for a button
-  //var ddBtn = $('<button>')
-    //.addClass('button')
-    //.attr('aria-haspopup', 'true')
-    //.attr('aria-controls', 'dropdown-menu'); // toggable menu, hidden by default
-  //var span1 = $('<span>').text('dropdownbtn');
-  //var span1 = $('<span>').addClass('icon is-small');
-  //var icon = $('<i>').addClass('fas fa-angle-down').attr('aria-hidden', 'true');
-  var ddmenu = $('<div>')
-    .addClass('dropdown-menu')
-    .attr('id', 'dropdown-menu')
-    .attr('role', 'menu');
-  var ddcontent = $('<div>').addClass('dropdown-content'); // dropdown box, with a white background and a shadow
-  for (var i = 0; i < data.results.length; i++) {
-    console.log(data.results[i]);
-    var a = $('<a>').addClass('dropdown-item').text(data.results[i].name);
-    ddcontent.append(a);
-  }
-  $('#dropdown-main').append(
-    //ddtrig.append(ddBtn.append),
-   ddmenu.append(ddcontent)
-  );
 };
 
-
-
 //
- 
-  
+
 //SAVE IMAGE TO LOCAL STORAGE AND RETRIEVE
 
 // call getAstronautApi temporarly until a from element is made
-const getSave = function(imageUrl){
-  localStorage.setItem( "savedimage",imageUrl);
-  console.log(getSave)
-}
+const getSave = function (imageUrl) {
+  localStorage.setItem('savedimage', imageUrl);
+  console.log(getSave);
+};
 
-var saveBtn = document.querySelector("#save")
- saveBtn.addEventListener('click',getSave); 
+var saveBtn = document.querySelector('#save');
+saveBtn.addEventListener('click', getSave);
 
-
-function imageOfTheDay(){
-  var input = document.getElementById("displayImage");
-  var storedValue = localStorage.getItem("displayImage");
-  
+function imageOfTheDay() {
+  var input = document.getElementById('displayImage');
+  var storedValue = localStorage.getItem('displayImage');
 }
 
 // call getAstronautApi temporarly until a from element is made

@@ -46,11 +46,6 @@
         <div class="card has-text-centered">
           <div class="card-content">
             <h2 class="title has-text-centered">HISTORICAL LAUNCHES</h2>
-            <div
-              style="display: none;"
-              class="dropdown is-active"
-              id="dropdown-main">
-            </div>
             <!--ON CLICK FUNCTION TO OPTIONS DROP DOWN MENU-->
             <button
               id="launchBtn"
@@ -118,15 +113,6 @@
                       </footer>
                     </div>
                   </div>
-
-                  <button
-                    id="btn"
-                    class="button is-link is-rounded"
-                    click="displayImage()"
-                  >
-                    Click Here!
-                  </button>
-
     </div>
 
             <!--MODAL TO DISPLAY LAUNCH-->
@@ -135,6 +121,7 @@
                 <div class="modal-card">
                   <header class="modal-card-head">
                     <section class="modal-card-title">
+                      <h2>Historical Launches</h2>
                     </section>
                     <button
                       class="delete"
@@ -145,13 +132,14 @@
                   <section class="modal-card-body">
                     <!-- all launches go here -->
                     <h2 id="name"></h2>
+                    <p>Status :</p>
                     <p id="status"></p>
                     <img
                       id="launch-pic"
                       src=""
                       alt=""
-                      width="100%"
                     />
+                    <p>Description: </p>
                     <p id="description"></p>
                   </section>
                   <footer class="modal-card-foot">
