@@ -2,7 +2,7 @@
 
 # Welcome to our group project - SPACE EXPLORER!
 
-## This project is created by utilizing HTML, CSS, Bulma and JavaScript with the addition of the Space Devs API and NASA's Astronomy Image of the Day API!
+## This project is created by utilizing HTML, CSS, Bulma, JavaScript, and JQuery with the addition of the Space Devs API and NASA's Astronomy Image of the Day API!
 
 ## CALLING ALL SPACE LOVERS!
 
@@ -16,27 +16,41 @@
 
 ![Homepage Images](./assets/images/homepage-images.png)
 
-## You will then be given the option to view historical launches with a choice of 10 launches from a dropdown menu.
+## You will then be given the option to view historical launches.
 
 ![View Launches](./assets/images/view-launches.png)
+
+## When you click View Launches, you will see a display of 10 historical launches with details including the rocket name, date, status, and description.
 ![Launch List](./assets/images/launch-list.png)
 
 ## We also provided the opportunity for you to view NASA's astronomy image of the day.
 
 ![NASA's APOD](./assets/images/image-of-the-day.png)
 
+## In addition to the astronomy image, you will also be able to read the description of the image below.
+
+![Image Description](./assets/images/image-description.png)
+
 ## We know these images are something you most likely want to save, so we provided an area for you to save the images here.
 
 ![Saved Images](./assets/images/saved-images.png)
 
-## Want to learn more about your favorite astronaut? You can also do that here.
+## Local storage was utilized in order to save the image of the day.
 
-![Favorite Astronaut](./assets/images/favorite-astronaut.png)
+![Local storage](./assets/images/local-storage.png)
+
+## Want to learn more about famous astronauts? You can also do that here. Click on the View Astronauts button.
+
+![Famous Astronaut Search](./assets/images/famous-astronauts.png)
+
+## Once clicked, a modal opens with 10 famous astronauts and their information, including their name, nationality, bio, status, last flight, and a Wikipedia link for more details.
+
+![Famous Astronaut Display](./assets/images/astronaut-display.png)
 
 ## This site is fully responsive for all screen sizes.
 
-![Responsive homepage-1](./assets/images/homepage-1.png)
-![Responsive homepage-2](./assets/images/homepage-2.png)
+![Responsive 1](./assets/images/responsive-1.png)
+![Responsive 2](./assets/images/responsive-2.png)
 
 ## Click here to view Space Explorer now: https://jamwil1226.github.io/space-explorer/
 
