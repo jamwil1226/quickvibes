@@ -239,6 +239,7 @@ const displayImage = function () {
       // request was succesful
       if (response.ok) {
         response.json().then(function (data) {
+          console.log(data);
           getImageData(data);
           saveImageData(data);
         });
@@ -277,8 +278,13 @@ const getImageData = function (data) {
   console.log(data);
   document.getElementById('title').textContent = data.title;
   document.getElementById('date').textContent = data.date;
-  document.getElementById('pic').src = data.hdurl;
   document.getElementById('explanation').textContent = data.explanation;
+  let imageSrcEl = document.getElementById('pic');
+  if (!imageSrcEl.src === undefined) {
+    imageSrcEl.src = data.hdurl;
+  } else {
+    document.getElementById('vid').src = data.url;
+  }
 };
 
 // ------------------------------------------------------------------------
