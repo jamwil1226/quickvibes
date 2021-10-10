@@ -53,12 +53,38 @@
   font-size: 1.1rem;
 }
 
+.modal-card-foot {
+  justify-content: right;
+}
+
 .border-bottom {
   border-bottom: 2px solid black;
   margin: 0 auto;
   width: 60%;
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+#loading {
+  width: 2rem;
+  height: 2rem;
+  border: 5px solid #f3f3f3;
+  border-top: 6px solid #9c41f2;
+  border-radius: 100%;
+  margin: auto;
+  display: none;
+  animation: spin 1s infinite linear;
+}
+#loading.display {
+  display: block;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media only screen and (min-width: 1024px) {
