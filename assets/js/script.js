@@ -2,6 +2,8 @@
 
 // Api for NASA APOD https://api.nasa.gov/planetary/apod?api_key=nndUMOcl1g9pH4trtcU5C4Reha8gBSZ4cOfJrlWU
 
+const saveArray = [];
+
 //MODAL DISPLAY FOR LAUNCH
 class BulmaModalLaunch {
   constructor(selector) {
@@ -217,12 +219,11 @@ const getLaunchesApi = function (user) {
           displayLaunches(data);
         });
       } else {
-        alert('Error: Api issue');
+        console.log('Error: Api issue');
       }
     })
     .catch(function (error) {
-      // .catch gets chained onto the end of the `.then()` method.
-      alert('Unable to connect to TheSpaceDevs');
+      console.log('Unable to connect to TheSpaceDevs');
     });
 };
 
@@ -242,12 +243,11 @@ const displayImage = function () {
           saveImageData(data);
         });
       } else {
-        alert('Error: Api issue');
+        console.log('Error: Api issue');
       }
     })
     .catch(function (error) {
-      // .catch gets chained onto the end of the `.then()` method.
-      alert('Unable to connect to NASA apod');
+      console.log('Unable to connect to NASA apod');
     });
 };
 
@@ -263,12 +263,12 @@ const getAstronautApi = function (user) {
           displayAstronaut(data);
         });
       } else {
-        alert('No Astronauts found');
+        console.log('No Astronauts found');
       }
     })
     .catch(function (error) {
       // .catch gets chained onto the end of the `.then()` method.
-      alert('Unable to connect to TheSpaceDevs');
+      console.log('Unable to connect to TheSpaceDevs');
     });
 };
 
@@ -565,40 +565,43 @@ const displayAstronaut = function (data) {
   document.querySelector('#ast-wiki10').innerHTML = `${astName10}`;
 };
 
-//
-
 //SAVE IMAGE TO LOCAL STORAGE AND RETRIEVE
 
 // call getAstronautApi temporarly until a from element is made
 
 // empty array for save
-let saveArray = [];
 
 const saveImageData = function (data) {
   let imageSrc = data.url;
   if (imageSrc != null) {
     saveArray.push(imageSrc);
     localStorage.setItem('savedImage', JSON.stringify(saveArray));
-    let savedImg = document.createElement('img');
-    savedImg.src = imageSrc;
-    savedImages.appendChild(savedImg);
+    createImage(imageSrc);
   }
+};
+
+const createImage = function (imageSrc) {
+  let savedImg = document.createElement('img');
+  savedImg.src = imageSrc;
+  savedImages.appendChild(savedImg);
 };
 
 const loadSavedImages = function () {
   let retrieveSavedImages = localStorage.getItem('savedImage');
-  let retrieveSavedImages2 = JSON.parse(retrieveSavedImages);
-  console.log(retrieveSavedImages2);
-  if (retrieveSavedImages2) {
-    retrieveSavedImages = retrieveSavedImages2;
-  } else {
-    retrieveSavedImages = [];
+  console.log('saved tasks found!');
+  // else, load up saved tasks
+
+  // parse into array of objects
+  retrieveSavedImages = JSON.parse(retrieveSavedImages);
+
+  // loop through retrievedSavedImages array
+  for (let i = 0; i < retrieveSavedImages.length; i++) {
+    // pass each image into the
+    createImage(retrieveSavedImages[i]);
   }
 };
 
 loadSavedImages();
-var saveBtn = document.querySelector('#save');
-saveBtn.addEventListener('click', saveImageData);
 
 // call getAstronautApi temporarly until a from element is made
 //getAstronautApi();
