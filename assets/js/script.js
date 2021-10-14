@@ -280,7 +280,7 @@ const getImageData = function (data) {
   document.getElementById('date').textContent = data.date;
   document.getElementById('explanation').textContent = data.explanation;
   let imageSrcEl = document.getElementById('pic');
-  if (!imageSrcEl.src === undefined) {
+  if (imageSrcEl.src != undefined) {
     imageSrcEl.src = data.hdurl;
   } else {
     document.getElementById('vid').src = data.url;
